@@ -1,0 +1,174 @@
+:root{
+    --primary:#0f172a;
+    --green:#10b981;
+    --sky:#0ea5e9;
+    --orange:#f59e0b;
+    --gold:#f59e0b;
+    --purple:#8b5cf6;
+    --teal:#14b8a6;
+    --rose:#f43f5e;
+    --text:#1e293b;
+    --muted:#475569;
+    --card:#fff;
+    --tr:all .35s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background-color:#0f172a;color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Navbar */
+.navbar{height:60px;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.1)}
+.nav-logo a{color:#fff;font-size:22px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo i{color:var(--orange);animation:spin 5s linear infinite}
+@keyframes spin{100%{transform:rotate(360deg)}}
+.back-btn{background:var(--orange);color:#fff;padding:10px 24px;border-radius:12px;text-decoration:none;font-weight:800;font-size:15px;transition:transform 0.3s, box-shadow 0.3s}
+.back-btn:hover{transform:scale(1.05);box-shadow:0 5px 15px rgba(245,158,11,0.4)}
+
+/* Header */
+.page-header{background:linear-gradient(135deg, #059669, #0d9488);text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;top:-50px;right:-50px;width:300px;height:300px;background:rgba(255,255,255,0.1);border-radius:50%}
+.page-header i{font-size:50px;margin-bottom:20px;color:#fff}
+.page-header h1{font-size:40px;margin-bottom:10px;font-weight:900;color:#fff}
+.page-header p{font-size:18px;opacity:0.9;color:#fff}
+.header-sub{display:block;margin-top:15px;font-size:16px;color:#d1fae5;font-weight:600}
+
+/* Stats Section */
+.sec-stats{padding:40px 0}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat-box{text-align:center;padding:24px 12px;border-radius:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px);transition:all 0.3s}
+.stat-box:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:0 0 20px rgba(245,158,11,0.2)}
+.stat-box .sn{font-size:2.5rem;font-weight:900;color:var(--orange);display:block;margin-bottom:5px}
+.stat-box .sl{font-size:1rem;color:#94a3b8}
+
+/* Sections */
+.section{padding:60px 0}
+.guar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-bottom:40px}
+
+/* Guarantee Cards */
+.guar-card{
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:2px solid rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+}
+.guar-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.guar-icon{
+    width:70px;height:70px;
+    border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:32px;
+    margin-bottom:20px;
+    transition:transform 0.4s;
+}
+.guar-card:hover .guar-icon{transform:rotate(-10deg) scale(1.1);}
+.guar-card h3{font-size:22px;margin-bottom:12px;color:#fff;}
+.guar-sub{color:#94a3b8;margin-bottom:20px;font-size:15px;font-weight:600;}
+.guar-list{list-style:none}
+.guar-list li{
+    padding:8px 0;
+    font-size:14px;
+    color:#cbd5e1;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    line-height:1.5;
+    font-weight:500;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.guar-list li:last-child{border:none}
+.guar-list li i{font-size:14px; margin-top:5px; flex-shrink:0;}
+
+/* Promise Banner */
+.promise-banner{
+    background:linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,41,59,0.9));
+    color:#fff;
+    padding:30px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    border:1px solid rgba(255,255,255,0.1);
+    margin-bottom:50px;
+}
+.promise-banner i{font-size:40px;color:var(--orange)}
+.promise-banner h3{font-size:22px;margin-bottom:10px}
+.promise-banner p{color:#94a3b8;font-size:15px;max-width:800px}
+
+/* FAQ Section (Slider) */
+.faq-header{text-align:center;margin-bottom:30px}
+.faq-header h2{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}
+.faq-header p{color:#94a3b8;font-size:16px}
+.faq-controls{display:flex;align-items:center;gap:15px;margin-top:20px;justify-content:center}
+.faq-arrow{width:45px;height:45px;border-radius:50%;background:var(--orange);color:#fff;border:none;cursor:pointer;font-size:16px;transition:all 0.3s;display:flex;align-items:center;justify-content:center}
+.faq-arrow:hover{transform:scale(1.1);background:#fff;color:var(--orange)}
+.faq-counter{color:#fff;font-weight:700;font-size:16px;min-width:50px;text-align:center;background:rgba(255,255,255,0.1);padding:8px 15px;border-radius:20px}
+
+.faq-slider-wrap{margin-bottom:40px}
+.faq-slider{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;transition:opacity 0.3s ease}
+.faq-card-lg{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:16px;
+    transition:all 0.3s;
+}
+.faq-card-lg:hover{transform:translateY(-5px);background:rgba(255,255,255,0.08);border-color:rgba(245,158,11,0.3)}
+.faq-card-lg h4{color:var(--orange);font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-weight:700}
+.faq-card-lg h4 i{font-size:20px}
+.faq-card-lg p{color:#cbd5e1;font-size:15px;line-height:1.8}
+
+.faq-cta{text-align:center;margin-top:40px}
+.faq-contact-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s;background:linear-gradient(135deg,#10b981,#059669);color:#fff}
+.faq-contact-btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(16,185,129,0.3)}
+
+/* Footer (مطابق ل how-to-order) */
+.sp-footer{background:linear-gradient(135deg,#020617,#0f172a);color:#fff;padding:25px 0 10px}
+.footer-grid{display:grid;gap:20px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand .footer-logo{font-size:1.3rem;font-weight:900;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:10px;justify-content:center}
+.footer-brand p{font-size:.85rem;color:#94a3b8;line-height:1.6;margin-bottom:12px}
+.footer-soc{display:flex;gap:8px;justify-content:center}
+.soc-a{color:#fff;background:rgba(255,255,255,0.1);width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;transition:var(--tr);text-decoration:none;font-size:1rem}
+.soc-a:hover{color:var(--gold);background:rgba(255,255,255,0.05);border:1px solid rgba(245,158,11,.5);transform:translateY(-4px)}
+.footer-bottom{padding:12px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:.8rem;color:#64748b}
+.fbl{display:flex;gap:12px;flex-wrap:wrap}
+.fbl a{font-size:.8rem;color:#64748b;text-decoration:none;transition:color .3s}
+.fbl a:hover{color:var(--gold)}
+
+/* Scroll To Top Button */
+.scroll-top-btn{
+    display:none;position:fixed;bottom:30px;left:30px;
+    background:var(--orange);color:#fff;
+    width:50px;height:50px;border-radius:50%;
+    border:none;font-size:20px;cursor:pointer;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    z-index:99;transition:transform 0.3s;
+    align-items:center;justify-content:center;
+}
+.scroll-top-btn:hover{transform:scale(1.1) translateY(-3px);background:var(--green)}
+
+/* Reveal Animation */
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal.rd1{transition-delay:.1s}
+.reveal.rd2{transition-delay:.2s}
+.reveal.rd3{transition-delay:.3s}
+
+@media(max-width:768px){
+    .guar-grid{grid-template-columns:1fr}
+    .promise-banner{flex-direction:column; text-align:center;}
+    .faq-slider{grid-template-columns:1fr}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .fbl{justify-content:center}
+}

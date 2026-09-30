@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SunPower — كيف تطلب</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="how-to-order.css">
+</head>
+<body>
+
+<nav class="navbar" id="nav">
+  <a href="SunPower.html" class="nav-brand"><i class="fas fa-solar-panel"></i><span>SunPower</span></a>
+  <button class="nav-tog" onclick="toggleNav()"><i class="fas fa-bars" id="navIco"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="nl"><a href="SunPower.html">الرئيسية</a></li>
+    <li class="nl"><a href="offers.html"><i class="fas fa-tags"></i> المنتجات</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner reveal">
+    <div class="page-hero-icon" style="background:rgba(29,78,216,.25);color:var(--blue-lt)"><i class="fas fa-list-ol"></i></div>
+    <h1 style="background:linear-gradient(135deg,#60A5FA,#1D4ED8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">كيف تطلب من SunPower</h1>
+    <p>أربع خطوات بسيطة تفصلك عن نظامك الشمسي المتكامل — من التصفح حتى التركيب والتشغيل</p>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec sec-bg-11">
+  <div class="cnt">
+    <div class="sh reveal">
+      <div class="sh-icon ic-blue"><i class="fas fa-route"></i></div>
+      <h2>خطوات الطلب</h2>
+      <p>عملية شراء شفافة وسهلة من الألف إلى الياء</p>
+      <span class="sh-subtext">أربع خطوات بسيطة تفصلك عن نظامك الشمسي المتكامل — من التصفح حتى التركيب والتشغيل</span>
+    </div>
+    <div class="steps-wrap">
+      <div class="steps-line"></div>
+      <div class="steps-grid">
+        <div class="step-box reveal" onclick="goTo('offers.html')">
+          <div class="step-num"><span>١</span></div>
+          <div class="step-ico"><i class="fas fa-magnifying-glass"></i></div>
+          <h3>تصفّح المنتجات</h3>
+          <p>استعرض ألواحنا الشمسية والبطاريات والعواكس مع كل التفاصيل والمواصفات والأسعار الواضحة</p>
+        </div>
+        <div class="step-box reveal rd1" onclick="toggleCart()">
+          <div class="step-num"><span>٢</span></div>
+          <div class="step-ico"><i class="fas fa-cart-shopping"></i></div>
+          <h3>أضف إلى السلة</h3>
+          <p>اختر المنتجات التي تناسبك وأضفها للسلة وعدّل الكميات حسب احتياجك بكل سهولة</p>
+        </div>
+        <div class="step-box reveal rd2" onclick="openPay()">
+          <div class="step-num"><span>٣</span></div>
+          <div class="step-ico"><i class="fas fa-credit-card"></i></div>
+          <h3>أتمّم الدفع</h3>
+          <p>ادفع ببطاقتك أو عبر زين كاش أو بنقل بنكي مع تشفير كامل وحماية بيانات متقدمة</p>
+        </div>
+        <div class="step-box reveal rd3">
+          <div class="step-num"><span>٤</span></div>
+          <div class="step-ico"><i class="fas fa-truck-ramp-box"></i></div>
+          <h3>استلم وركّب</h3>
+          <p>يصلك طلبك مجاناً خلال ٣-٥ أيام مع خدمة تركيب احترافي وضمان شامل وصيانة دورية</p>
+        </div>
+      </div>
+    </div>
+    <div class="order-stats">
+      <div class="ostat reveal"><span class="on">٣-٥</span><span class="ol">أيام متوسط التوصيل</span></div>
+      <div class="ostat reveal rd1"><span class="on">٠ د.ع</span><span class="ol">رسوم الشحن</span></div>
+      <div class="ostat reveal rd2"><span class="on" data-target="24">0</span><span class="ol">شهر ضمان شامل</span></div>
+      <div class="ostat reveal rd3"><span class="on" data-target="30">0</span><span class="ol">يوم حق الاسترجاع</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT METHODS -->
+<section class="sec sec-bg-11">
+  <div class="cnt">
+    <div class="sh reveal">
+      <div class="sh-icon ic-gold"><i class="fas fa-credit-card"></i></div>
+      <h2>طرق الدفع المتاحة</h2>
+      <p>دفع مرن وآمن يناسب جميع العملاء</p>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-card reveal" onclick="selectPay(this)">
+        <i class="fas fa-credit-card" style="color:var(--blue-lt)"></i>
+        <h3>بطاقة ائتمانية</h3>
+        <p>Visa / MasterCard / بطاقات المصارف العراقية مع تشفير ٢٥٦ بت</p>
+      </div>
+      <div class="pay-card reveal rd1" onclick="selectPay(this)">
+        <i class="fas fa-building-columns" style="color:var(--green-lt)"></i>
+        <h3>تحويل بنكي</h3>
+        <p>تحويل مباشر لحساب الشركة وتأكيد الطلب خلال ساعة من الاستلام</p>
+      </div>
+      <div class="pay-card reveal rd2" onclick="selectPay(this)">
+        <i class="fas fa-wallet" style="color:var(--gold-lt)"></i>
+        <h3>زين كاش</h3>
+        <p>دفع سريع وآمن عبر محفظة زين كاش الإلكترونية من هاتفك مباشرة</p>
+      </div>
+      <div class="pay-card reveal rd3" onclick="selectPay(this)">
+        <i class="fas fa-money-bill-wave" style="color:var(--orange-lt)"></i>
+        <h3>الدفع عند الاستلام</h3>
+        <p>ادفع نقداً للمندوب عند استلام طلبك بكل راحة وأمان</p>
+      </div>
+      <div class="pay-card reveal" onclick="selectPay(this)">
+        <i class="fas fa-handshake" style="color:var(--sky-lt)"></i>
+        <h3>تقسيط ٢٤ شهراً</h3>
+        <p>قسّط مشترياتك على ٢٤ شهراً بدون فوائد مع بنوك شريكة معتمدة</p>
+      </div>
+      <div class="pay-card reveal rd1" onclick="selectPay(this)">
+        <i class="fab fa-google-pay" style="color:var(--purple-lt)"></i>
+        <h3>المحافظ الإلكترونية</h3>
+        <p>Google Pay وApple Pay ومحافظ إلكترونية متعددة مدعومة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="sec sec-bg-11">
+  <div class="cnt">
+    <div class="sh reveal">
+      <div class="sh-icon ic-green"><i class="fas fa-lightbulb"></i></div>
+      <h2>نصائح قبل الشراء</h2>
+      <p>اقرأها لتختار المنتج الأمثل لاحتياجك</p>
+    </div>
+    <div class="tips-grid">
+      <div class="card reveal">
+        <div class="tip-icon" style="background:rgba(234,179,8,.2);color:var(--gold)"><i class="fas fa-calculator"></i></div>
+        <h3>احسب احتياجك</h3>
+        <p>قبل الشراء احسب عدد الأجهزة وساعات التشغيل اليومي لتحديد القدرة المناسبة. فريقنا يساعدك مجاناً.</p>
+      </div>
+      <div class="card reveal rd1">
+        <div class="tip-icon" style="background:rgba(22,163,74,.2);color:var(--green-lt)"><i class="fas fa-sun"></i></div>
+        <h3>قيّم موقع التركيب</h3>
+        <p>تأكد من أن السطح يستقبل ضوء الشمس ٦ ساعات على الأقل يومياً وبعيد عن ظل الأشجار والمباني.</p>
+      </div>
+      <div class="card reveal rd2">
+        <div class="tip-icon" style="background:rgba(2,132,199,.2);color:var(--sky-lt)"><i class="fas fa-phone"></i></div>
+        <h3>استشر خبراءنا</h3>
+        <p>اتصل بنا مجاناً وسيقدّم لك مهندسونا المعتمدون أفضل حل شمسي يناسب بيتك وميزانيتك بدقة تامة.</p>
+      </div>
+      <div class="card reveal rd3">
+        <div class="tip-icon" style="background:rgba(124,58,237,.2);color:var(--purple-lt)"><i class="fas fa-battery-three-quarters"></i></div>
+        <h3>اختر سعة البطارية</h3>
+        <p>تأكد من اختيار بطاريات بسعة تخزين تكفي لتشغيل أجهزتك ليلاً ولأكثر من يوم في الشتاء.</p>
+      </div>
+      <div class="card reveal">
+        <div class="tip-icon" style="background:rgba(234,88,12,.2);color:var(--orange-lt)"><i class="fas fa-shield-halved"></i></div>
+        <h3>اقرأ سياسة الضمان</h3>
+        <p>راجع مدة الضمان الخاصة بالألواح والعواكس والبطاريات، فلكل منها عمر افتراضي وضمان مختلف.</p>
+      </div>
+      <div class="card reveal rd1">
+        <div class="tip-icon" style="background:rgba(225,29,72,.2);color:#fb7185"><i class="fas fa-screwdriver-wrench"></i></div>
+        <h3>جهّز موقعك مسبقاً</h3>
+        <p>نظّف منطقة التركيب وتأكد من سلامة الأسلاك الكهربائية في منزلك قبل وصول فريق التركيب.</p>
+      </div>
+    </div>
+    <div class="tips-cta reveal">
+      <a href="offers.html" class="btn btn-gold btn-lg"><i class="fas fa-solar-panel"></i> ابدأ التسوق الآن</a>
+      <a href="contact.html" class="btn btn-sky btn-lg"><i class="fas fa-phone"></i> تحدّث مع مهندس</a>
+    </div>
+  </div>
+</section>
+
+<footer class="sp-footer">
+  <div class="cnt">
+    <div class="footer-grid" style="grid-template-columns:1fr; text-align:center;">
+      <div class="footer-brand">
+        <div class="footer-logo" style="justify-content:center;"><i class="fas fa-solar-panel"></i><span>SunPower</span></div>
+        <p style="max-width:500px; margin:0 auto 15px;">أربع خطوات بسيطة تفصلك عن الاستقلال الطاقوي الكامل.</p>
+        <div class="footer-soc" style="justify-content:center;">
+          <a class="soc-a" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-tiktok"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ٢٠٢٤ SunPower Iraq — جميع الحقوق محفوظة</p>
+      <div class="fbl"><a href="#">سياسة الخصوصية</a><a href="#">الشروط والأحكام</a><a href="#">سياسة الاسترجاع</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Panel -->
+<div class="cpn" id="cartPanel">
+  <div class="cph">
+    <h3><i class="fas fa-shopping-cart"></i> السلة (<span id="cartCnt">0</span>)</h3>
+    <button class="cpc" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cpis" id="cartItems"></div>
+  <div class="cpf">
+    <div class="cptt"><span>المجموع:</span><strong id="cartTot">0 د.ع</strong></div>
+    <button class="cpco" onclick="openPay()"><i class="fas fa-credit-card" style="margin-left:4px"></i>إتمام الدفع</button>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="pym" id="payModal">
+  <div class="pyb">
+    <button class="moc" onclick="closePay()"><i class="fas fa-times"></i></button>
+    <h2><i class="fas fa-lock"></i> إتمام الدفع</h2>
+    <p class="pys">معاملة آمنة ومشفرة</p>
+    
+    <div class="pymt-grid">
+      <div class="pymth sel" onclick="selPm(this)"><i class="fab fa-cc-visa"></i>Visa</div>
+      <div class="pymth" onclick="selPm(this)"><i class="fab fa-cc-mastercard"></i>Mastercard</div>
+      <div class="pymth" onclick="selPm(this)"><i class="fas fa-credit-card"></i>Qi Card</div>
+      <div class="pymth" onclick="selPm(this)"><i class="fas fa-building-columns"></i>تحويل بنكي</div>
+      <div class="pymth" onclick="selPm(this)"><i class="fas fa-wallet"></i>زين كاش</div>
+      <div class="pymth" onclick="selPm(this)"><i class="fas fa-hand-holding-dollar"></i>عند الاستلام</div>
+      <div class="pymth" onclick="selPm(this)"><i class="fas fa-handshake"></i>تقسيط</div>
+    </div>
+
+    <div class="payment-tabs">
+      <div class="pay-tab active" onclick="selectTab(this, 'card')">بطاقة</div>
+      <div class="pay-tab" onclick="selectTab(this, 'transfer')">تحويل</div>
+      <div class="pay-tab" onclick="selectTab(this, 'zain')">زين كاش</div>
+    </div>
+
+    <div class="payment-form" id="cardForm">
+      <input type="text" class="pyfi" placeholder="رقم البطاقة" maxlength="19">
+      <div class="pyrw">
+        <input type="text" class="pyfi" placeholder="MM/YY" maxlength="5">
+        <input type="text" class="pyfi" placeholder="CVV" maxlength="3">
+      </div>
+      <input type="text" class="pyfi" placeholder="اسم حامل البطاقة">
+    </div>
+
+    <div class="pytt"><span>المجموع:</span><strong id="payTot">0 د.ع</strong></div>
+    <button class="pybt" onclick="confirmPay()"><i class="fas fa-check-circle" style="margin-left:4px"></i>تأكيد الدفع</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function toggleNav(){var nl=document.getElementById('navLinks');var ic=document.getElementById('navIco');nl.classList.toggle('open');ic.className=nl.classList.contains('open')?'fas fa-times':'fas fa-bars'}
+var ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+function showToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2800)}
+function goTo(url){window.location.href=url}
+function selectPay(el){document.querySelectorAll('.pay-card').forEach(function(c){c.classList.remove('sel')});el.classList.add('sel');showToast('✅ تم اختيار طريقة الدفع')}
+function animCount(el,target){var s=0,step=Math.ceil(target/50);var timer=setInterval(function(){s+=step;if(s>=target){s=target;clearInterval(timer)}el.textContent=s},28)}
+var co=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting&&e.target.dataset.target){animCount(e.target,parseInt(e.target.dataset.target));co.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('[data-target]').forEach(function(el){co.observe(el)});
+
+// Cart & Payment Logic - Loads from localStorage to sync with offers.html
+let cart = JSON.parse(localStorage.getItem('sunpower_cart')) || [];
+
+function saveCart() {
+    localStorage.setItem('sunpower_cart', JSON.stringify(cart));
+}
+
+function renderCart() {
+  var cnt = 0, totP = 0;
+  cart.forEach(function(item) {
+    cnt += item.qty;
+    totP += item.price * item.qty;
+  });
+  document.getElementById('cartCnt').textContent = cnt;
+  document.getElementById('cartTot').textContent = totP.toLocaleString() + ' د.ع';
+
+  var ci = document.getElementById('cartItems');
+  ci.innerHTML = '';
+
+  if (cart.length === 0) {
+    ci.innerHTML = '<div class="cpe show"><i class="fas fa-cart-shopping"></i><p>السلة فارغة</p></div>';
+    return;
+  }
+
+  cart.forEach(function(item) {
+    var div = document.createElement('div');
+    div.className = 'cpi';
+    div.innerHTML = '<div class="cpit"><div><div class="cpinm">' + item.name + '</div><div class="cpip">' + item.price.toLocaleString() + ' د.ع</div></div></div>' +
+      '<div class="cpiq"><button class="qb" onclick="chgQ(\'' + item.id + '\',-1)">-</button><span class="qv">' + item.qty + '</span><button class="qb" onclick="chgQ(\'' + item.id + '\',1)">+</button></div>' +
+      '<div class="cpid" onclick="delC(\'' + item.id + '\')"><i class="fas fa-trash"></i> حذف</div>';
+    ci.appendChild(div);
+  });
+}
+
+function chgQ(id, delta) {
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].id === id) {
+      cart[i].qty += delta;
+      if (cart[i].qty <= 0) cart.splice(i, 1);
+      break;
+    }
+  }
+  saveCart();
+  renderCart();
+}
+
+function delC(id) {
+  cart = cart.filter(function(c) { return c.id !== id; });
+  saveCart();
+  renderCart();
+  showToast('تم حذف المنتج من السلة');
+}
+
+function toggleCart() { 
+  renderCart();
+  document.getElementById('cartPanel').classList.toggle('open'); 
+}
+
+function openPay() {
+  if (cart.length === 0) { showToast('السلة فارغة! يرجى إضافة منتجات أولاً.'); return; }
+  var totP = 0;
+  cart.forEach(function(item) { totP += item.price * item.qty; });
+  document.getElementById('payTot').textContent = totP.toLocaleString() + ' د.ع';
+  document.getElementById('payModal').classList.add('show');
+}
+
+function closePay() { document.getElementById('payModal').classList.remove('show'); }
+
+function selPm(el) {
+  var all = document.querySelectorAll('.pymth');
+  for (var i = 0; i < all.length; i++) all[i].classList.remove('sel');
+  el.classList.add('sel');
+}
+
+function selectTab(el, type) {
+  document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function confirmPay() {
+  showToast('تم تأكيد الدفع بنجاح! سيتم التواصل معك لتأكيد الطلب.');
+  cart = [];
+  saveCart(); // Clear cart in localStorage
+  renderCart();
+  closePay();
+  document.getElementById('cartPanel').classList.remove('open');
+}
+
+// Initialize cart on load
+renderCart();
+</script>
+</body>
+</html>

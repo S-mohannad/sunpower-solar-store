@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SunPower - العروض والباقات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="offers.css">
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- Modal for Product Details -->
+<div class="modal-overlay" id="prodModal" onclick="closeModal(event)">
+  <div class="modal-body" onclick="event.stopPropagation()">
+    <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-layout">
+        <div class="modal-img-box">
+            <img id="mImg" src="" alt="Product Image">
+        </div>
+        <div class="modal-content">
+            <span class="modal-cat" id="mCat"></span>
+            <h2 id="mName"></h2>
+            <p class="modal-desc" id="mDesc"></p>
+            <div class="specs-grid" id="mSpecs"></div>
+            <div class="modal-footer">
+                <div class="modal-price" id="mPrice"></div>
+                <button class="modal-btn" onclick="addToCartFromModal()"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <div class="logo-icon-wrap"><i class="fas fa-solar-panel"></i></div>
+    SunPower
+  </div>
+  <ul class="nav-links">
+    <li><a href="SunPower.html">الرئيسية</a></li>
+    <li><a href="#panels">الألواح</a></li>
+    <li><a href="#batteries">البطاريات</a></li>
+    <li><a href="#inverters">العواكس</a></li>
+    <li><a href="#packages">الباقات</a></li>
+    <li><a href="#delivery">التوصيل</a></li>
+  </ul>
+  <a href="SunPower.html" class="nav-btn">العودة للمتجر</a>
+</nav>
+
+<!-- Header Section -->
+<section class="section">
+  <div class="container">
+    <div class="glass-wrapper glass-header">
+      <div class="page-header">
+        <h1><i class="fas fa-tags"></i> العروض والباقات المتكاملة</h1>
+        <p>استعرض أحدث منتجنا وباقاتنا الشاملة مع توصيل مجاني وضمان سنتين</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solar Panels -->
+<section id="panels" class="section">
+  <div class="container">
+    <div class="glass-wrapper glass-panels">
+      <div class="section-header">
+        <i class="fas fa-solar-panel"></i>
+        <h2>الألواح الشمسية</h2>
+        <p>خيارات متنوعة من أشهر المصنّعين العالميين</p>
+      </div>
+      <div class="products-grid" id="panG"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Batteries -->
+<section id="batteries" class="section">
+  <div class="container">
+    <div class="glass-wrapper glass-batteries">
+      <div class="section-header">
+        <i class="fas fa-battery-full"></i>
+        <h2>بطاريات التخزين</h2>
+        <p>خزّن الطاقة الفائضة للاستخدام ليلاً وحالات الطوارئ</p>
+      </div>
+      <div class="products-grid" id="batG"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Inverters & Accessories -->
+<section id="inverters" class="section">
+  <div class="container">
+    <div class="glass-wrapper glass-inverters">
+      <div class="section-header">
+        <i class="fas fa-microchip"></i>
+        <h2>عواكس وملحقات</h2>
+        <p>كل ما تحتاجه لإكمال نظامك الشمسي</p>
+      </div>
+      <div class="products-grid" id="invG"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Packages -->
+<section id="packages" class="section">
+  <div class="container">
+    <div class="glass-wrapper glass-packages">
+      <div class="section-header">
+        <i class="fas fa-box"></i>
+        <h2>باقات الأنظمة المتكاملة</h2>
+        <p>أنظمة شاملة من البداية حتى التشغيل مع التركيب والضمان</p>
+      </div>
+      <div class="packages-grid" id="pkgG"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Delivery Form -->
+<section id="delivery" class="section">
+  <div class="container">
+    <div class="glass-wrapper glass-delivery">
+      <div class="section-header">
+        <i class="fas fa-truck-fast"></i>
+        <h2>طلب التوصيل المجاني</h2>
+        <p>أدخل بياناتك وسنتواصل معك لتأكيد موعد التوصيل</p>
+      </div>
+      <div class="delivery-grid">
+        <div class="delivery-info">
+          <div class="info-box reveal"><i class="fas fa-truck"></i><div><h4>مدة التوصيل</h4><p>3-5 أيام عمل لجميع المحافظات مع تتبع مباشر وإشعارات مرحلية</p></div></div>
+          <div class="info-box reveal"><i class="fas fa-money-bill-wave"></i><div><h4>رسوم التوصيل</h4><p>مجاني بالكامل بدون أي رسوم إضافية مخفية على الإطلاق</p></div></div>
+          <div class="info-box reveal"><i class="fas fa-box-open"></i><div><h4>التغليف والحماية</h4><p>تغليف مهني متعدد الطبقات مع حماية ضد الصدمات والرطوبة والحرارة</p></div></div>
+          <div class="info-box reveal"><i class="fas fa-screwdriver-wrench"></i><div><h4>خدمة التركيب</h4><p>تركيب احترافي بأسعار منافسة من فريق معتمد مع ضمان على جودة العمل</p></div></div>
+        </div>
+        <form class="delivery-form" onsubmit="event.preventDefault(); validateDelivery(this);">
+          <h3>بيانات التوصيل</h3>
+          <div class="form-row">
+            <input type="text" placeholder="الاسم الأول" required>
+            <input type="text" placeholder="الاسم الأخير" required>
+          </div>
+          <input type="text" placeholder="رقم الهاتف (07XX)" required>
+          <input type="email" placeholder="البريد الإلكتروني" required>
+          <select required>
+            <option value="" disabled selected>المحافظة</option>
+            <option>بغداد</option><option>البصرة</option><option>أربيل</option><option>النجف</option><option>كربلاء</option><option>ديالى</option><option>أنبار</option><option>كركوك</option>
+          </select>
+          <textarea placeholder="العنوان التفصيلي (الحي، الشارع، رقم المنزل)..." rows="3" required></textarea>
+          <textarea placeholder="ملاحظات إضافية..." rows="2"></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> تأكيد طلب التوصيل</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 SunPower Iraq - جميع الحقوق محفوظة | <a href="SunPower.html">العودة للصفحة الرئيسية</a></p>
+  </div>
+</footer>
+
+<!-- Floating Cart Button -->
+<a href="how-to-order.html" class="float-cart-btn" id="floatCartBtn">
+  <i class="fas fa-shopping-cart"></i>
+  <span class="cart-count" id="cartCount">0</span>
+</a>
+
+<script>
+var PD = [
+  {id:'p1', ct:'panel', nm:'لوح Mono PERC 550W', cat:'الألواح الشمسية', img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&h=400&fit=crop', bg:'#f0fdfa', bdg:'جديد', bc:'pct', desc:'تقنية أحادية البلورة عالية الكفاءة مع خلايا Half-Cut مقاومة للظل. مثالي للمناخ الحار.', pr:'420,000 د.ع', op:'490,000 د.ع', tags:['550W', '21.3%', 'IP68', 'Half-Cut'], specs:[['القدرة','550 واط'],['الكفاءة','21.3%'],['النوع','Mono PERC'],['الخلايا','Half-Cut 144'],['الوزن','27.5 كجم'],['الأبعاد','2278×1134×30'],['الضمان','12 سنة / 25 أداء'],['الحرارة','-40~+85°C']]},
+  {id:'p2', ct:'panel', nm:'لوح Bifacial 580W', cat:'الألواح الشمسية', img:'https://shop.solarity.jo/imgserver/eshop/solarity/19/2000000325/4582-580.jpg', bg:'#ecfeff', bdg:'الأكثر مبيعاً', bc:'pcn', desc:'ثنائي الوجه ينتج طاقة من الجانبين بزيادة 30%. زجاج مقسى مزدوج.', pr:'530,000 د.ع', op:'620,000 د.ع', tags:['580W', '22.1%', 'Bifacial', '30 سنة'], specs:[['القدرة','580 واط'],['الكفاءة','22.1%'],['النوع','Bifacial Dual Glass'],['الوزن','32 كجم'],['الأبعاد','2465×1134×30'],['Bifacial','+30%'],['الضمان','12 سنة / 30 أداء'],['الحرارة','-0.29%/°C']]},
+  {id:'p3', ct:'panel', nm:'لوح Thin-Film 420W', cat:'الألواح الشمسية', img:'https://ar.pnsolarpv.com/storage/uploads/images/202309/21/1695281300_whOvOoZ1Ki.webp', bg:'#f0fdf4', bdg:'خصم 25%', bc:'pcs', desc:'مرن وخفيف (3 كجم فقط) للأسطح غير التقليدية والمزارع. يتحمل الرياح والأمطار.', pr:'290,000 د.ع', op:'385,000 د.ع', tags:['420W', '18.5%', 'مرن', '3 كجم'], specs:[['القدرة','420 واط'],['الكفاءة','18.5%'],['النوع','Thin-Film'],['الوزن','3 كجم'],['المرونة','قطر لف 25 سم'],['مقاومة','IP67'],['الضمان','5 سنوات'],['الحرارة','-40~+85°C']]},
+  {id:'p4', ct:'panel', nm:'لوح Poly 450W', cat:'الألواح الشمسية', img:'https://cdn.enfsolar.com/Product/logo/Crystalline/65aa2012ba510.jpg', bg:'#eff6ff', bdg:'وارد جديد', bc:'pcn', desc:'خلايا متعددة البلورات بتكلفة اقتصادية للمشاريع الكبيرة. أداء موثوق.', pr:'340,000 د.ع', op:'', tags:['450W', '19.2%', 'اقتصادي', 'PID-free'], specs:[['القدرة','450 واط'],['الكفاءة','19.2%'],['النوع','Poly Crystalline'],['الوزن','24 كجم'],['الأبعاد','2100×1048×35'],['Anti-PID','مدمج'],['الضمان','10 سنوات / 25 أداء'],['الرياح','2400 Pa']]},
+  {id:'p5', ct:'panel', nm:'لوح HJT 610W', cat:'الألواح الشمسية', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUjl6PZ61aqvZpsJMnKgRTl4hx5y9ugT_fKw&s', bg:'#eef2ff', bdg:'تقنية متقدمة', bc:'pct', desc:'أحدث تقنية Heterojunction بكفاءة 23.8%. فقد حراري أقل 50% من التقليدية.', pr:'670,000 د.ع', op:'780,000 د.ع', tags:['610W', '23.8%', 'HJT', 'فقد منخفض'], specs:[['القدرة','610 واط'],['الكفاءة','23.8%'],['النوع','HJT'],['الوزن','34 كجم'],['الأبعاد','2510×1134×30'],['الحرارة','-0.26%/°C'],['الضمان','15 سنة / 30 أداء'],['إنتاجية','+15% بالحرارة']]},
+  {id:'p6', ct:'panel', nm:'لوح N-Type 650W', cat:'الألواح الشمسية', img:'https://images.unsplash.com/photo-1592655287931-6b2c1a0d0f2c?q=80&w=1000&auto=format&fit=crop', bg:'#fdf2f8', bdg:'وارد جديد', bc:'pcn', desc:'تقنية N-Type TopCon الأحدث عالمياً بأداء فائق في درجات الحرارة العالية.', pr:'750,000 د.ع', op:'', tags:['650W', '22.5%', 'N-Type', 'TopCon'], specs:[['القدرة','650 واط'],['الكفاءة','22.5%'],['النوع','N-Type TopCon'],['الوزن','35 كجم'],['الأبعاد','2384×1303×35'],['الحرارة','-0.24%/°C'],['الضمان','15 سنة / 30 أداء'],['الرياح','2400 Pa']]},
+
+  {id:'b1', ct:'bat', nm:'بطارية LiFePO4 10kWh', cat:'بطاريات التخزين', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0oj1_YGkvUuNQ77HyWeLIxP0RU5nAg5FT7A&s', bg:'#f0fdf4', bdg:'الأكثر مبيعاً', bc:'pct', desc:'ليثيوم حديد فوسفات الأكثر أماناً. عمر يتجاوز 6000 دورة مع BMS ذكي.', pr:'2,800,000 د.ع', op:'3,200,000 د.ع', tags:['10kWh', '48V', '6000+', 'BMS'], specs:[['السعة','10 kWh'],['الجهد','48V'],['التقنية','LiFePO4'],['الدورات','6000+ دورة'],['الوزن','85 كجم'],['BMS','مدمج ذكي'],['الحرارة','-20~+60°C'],['الضمان','5 سنوات']]},
+  {id:'b2', ct:'bat', nm:'بطارية Gel 200Ah', cat:'بطاريات التخزين', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLcPM44uMnfWP_vRACPxDbZ8V10oWvFcyjw&s', bg:'#f0fdfa', bdg:'جديد', bc:'pcn', desc:'بطارية جل عميقة بدون صيانة. لا تبعثر غازات سامة. مثالية للمناطق الحارة.', pr:'380,000 د.ع', op:'', tags:['200Ah', '12V', 'Gel', 'صفر صيانة'], specs:[['السعة','200Ah'],['الجهد','12V'],['التقنية','Gel VRLA'],['الدورات','1200'],['الوزن','62 كجم'],['الصيانة','صفر'],['الحرارة','-15~+50°C'],['الضمان','2 سنة']]},
+  {id:'b3', ct:'bat', nm:'خزانة بطاريات 48V 100Ah', cat:'بطاريات التخزين', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3YGS7E77Nc-lGBmYIzl3cSn6WefTyERjJgw&s', bg:'#fffbeb', bdg:'عرض خاص', bc:'pcs', desc:'خزانة مدمجة مع BMS ذكي وشاشة LED. تصميم أنيق للحائط. قابل للتوسع بالتوالي.', pr:'1,650,000 د.ع', op:'1,900,000 د.ع', tags:['48V', '100Ah', 'BMS', 'LED'], specs:[['السعة','4.8 kWh'],['الجهد','48V'],['التقنية','LiFePO4'],['البنود','16 خلية'],['الشاشة','LED'],['الاتصال','بلوتوث+WiFi'],['الوزن','45 كجم'],['الضمان','5 سنوات']]},
+  {id:'b4', ct:'bat', nm:'بطارية LiFePO4 5kWh', cat:'بطاريات التخزين', img:'https://ar.sunevosolar.com/js/tinymce/demo/images/202311/22/8aa38b7ae9e4629791c65dabffefa64c.jpg', bg:'#eff6ff', bdg:'مميز', bc:'pcn', desc:'نسخة مصغرة للمنازل الصغيرة. نفس تقنية الليثيوم الآمن بوزن 42 كجم. قابلة للتوسع لاحقاً.', pr:'1,450,000 د.ع', op:'', tags:['5kWh', '48V', 'قابل للتوسع', '42 كجم'], specs:[['السعة','5 kWh'],['الجهد','48V'],['التقنية','LiFePO4'],['الدورات','6000+'],['الوزن','42 كجم'],['التوسع','بالتوالي'],['الحرارة','-20~+60°C'],['الضمان','5 سنوات']]},
+  {id:'b5', ct:'bat', nm:'بطارية LiFePO4 15kWh', cat:'بطاريات التخزين', img:'https://images.unsplash.com/photo-1620677750988-8ca4bced4de6?q=80&w=1000&auto=format&fit=crop', bg:'#fff7ed', bdg:'الأكبر سعة', bc:'pct', desc:'سعة ضخمة 15 كيلو واط للأنظمة التجارية والفلل الكبيرة. تركيب Rack مركزي.', pr:'3,900,000 د.ع', op:'', tags:['15kWh', '51.2V', '6000+', 'Rack Mount'], specs:[['السعة','15 kWh'],['الجهد','51.2V'],['التقنية','LiFePO4'],['الدورات','6000+ دورة'],['الوزن','120 كجم'],['التوسع','متوازي'],['BMS','مدمج ذكي'],['الضمان','5 سنوات']]},
+
+  {id:'i1', ct:'inv', nm:'عاكس هجين 8kW', cat:'عواكس وملحقات', img:'https://images.unsplash.com/photo-1605980776566-0486c3ac7617?q=80&w=1000&auto=format&fit=crop', bg:'#eff6ff', bdg:'الأكثر مبيعاً', bc:'pct', desc:'Hybrid يدعم الشبكة والبطاريات معاً. مراقبة WiFi وتطبيق جوال. كفاءة تحويل 97.6%.', pr:'1,200,000 د.ع', op:'1,400,000 د.ع', tags:['8kW', 'Hybrid', 'WiFi', '97.6%'], specs:[['القدرة','8 kW'],['النوع','Hybrid'],['الكفاءة','97.6%'],['الشمسية','MPPT مزدوج'],['الشبكة','On/Off Grid'],['المراقبة','WiFi+App'],['الأبعاد','420×390×180'],['الضمان','5 سنوات']]},
+  {id:'i2', ct:'inv', nm:'عاكس On-Grid 5kW', cat:'عواكس وملحقات', img:'https://ar.jingsun-power.com/uploads/202339551/deye-5kw-on-grid-inverter7bcf1808-c357-4b52-87bb-e608777ad9e7.jpg', bg:'#f0f9ff', bdg:'الأكثر طلباً', bc:'pcn', desc:'عاكس شبكي يصدر الفائض للشبكة مع عداد ذكي. كفاءة 98.2% وتصميم مضغوط.', pr:'920,000 د.ع', op:'1,060,000 د.ع', tags:['5kW', 'On-Grid', '98.2%', 'مضغوط'], specs:[['القدرة','5 kW'],['النوع','On-Grid'],['الكفاءة','98.2%'],['الشمسية','MPPT مزدوج'],['التصدير','عداد ذكي'],['الأبعاد','380×350×150'],['الضمان','5 سنوات'],['اللون','رمادي']]},
+  {id:'i3', ct:'inv', nm:'منظم شحن MPPT 60A', cat:'عواكس وملحقات', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKIL2fS0os-IDtollrhuzhsxiyjzA9bpzWqw&s', bg:'#eef2ff', bdg:'مهم جداً', bc:'pct', desc:'MPPT متقدم يستخلص أقصى طاقة من الألواح. كفاءة 99% مع شاشة LCD وبلوتوث.', pr:'450,000 د.ع', op:'', tags:['60A', 'MPPT', 'بلوتوث', 'LCD'], specs:[['التيار','60A'],['التقنية','MPPT'],['الكفاءة','99%'],['الشاشة','LCD'],['الاتصال','بلوتوث'],['الجهد','12/24/48V تلقائي'],['الأبعاد','260×170×85'],['الضمان','5 سنوات']]},
+  {id:'i4', ct:'inv', nm:'هيكل تثبيت ألومنيوم 6 ألواح', cat:'عواكس وملحقات', img:'https://image.made-in-china.com/202f0j00ZHRoqkfassgG/Adjustable-Solar-Folding-Panel-Mounting-Structure-Aluminum-Accessory-Racking-Trangle-Rack-for-Rlat-Mounting-System.webp', bg:'#f0fdf4', bdg:'الأكثر طلباً', bc:'pcn', desc:'هيكل تثبيت 6 ألواح ألومنيوم مع دليل مرئي خطوة بخطوة. سهل التركيب ومقاوم للرياح.', pr:'180,000 د.ع', op:'', tags:['6 ألواح', 'ألومنيوم', 'قابل للتعديل', 'عراقي'], specs:[['السعة','6 ألواح'],['المادة','ألومنيوم'],['الرياح','2400 Pa'],['الثلوج','5400 Pa'],['الزاوية','قابل للتعديل'],['الضمان','10 سنوات'],['الوزن','12 كجم'],['المصدر','صناعة عراقية']]},
+  {id:'i5', ct:'inv', nm:'كابلات شمسية 6mm 50m', cat:'عواكس وملحقات', img:'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=700&h=400&fit=crop', bg:'#fffbeb', bdg:'خصم 15%', bc:'pcs', desc:'كابلات شمسية معتمد TUV من Staubli. 50 متر مع موصلات MC4. أحمر وأسود.', pr:'95,000 د.ع', op:'112,000 د.ع', tags:['6mm²', '50m', 'MC4', 'TUV'], specs:[['المقطع','6 mm²'],['الطول','50 متر'],['الموصلات','MC4'],['المقاومة','UV TUV/IEC'],['اللون','أحمر+أسود'],['الحرارة','-40~+90°C'],['العزل','مزدوج'],['الضمان','10 سنوات']]},
+  {id:'i6', ct:'inv', nm:'حماية ضد الصواعق', cat:'عواكس وملحقات', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzsOu3uIPYqq7Glb-Aj_V6r9Qj5bQJtDT-bg&s', bg:'#fef2f2', bdg:'أساسي', bc:'pcn', desc:'حماية شاملة ضد الصواعق والتيار الزائد DC/AC. ضروري لسلامة النظام الشمسي.', pr:'75,000 د.ع', op:'', tags:['1000V', '40kA', '3 مراحل', 'أساسي'], specs:[['النوع','DC+AC'],['الجهد','1000V DC'],['الاستجابة','25 نانوثانية'],['التيار','40kA'],['الحماية','3 مراحل'],['الحرارة','-40~+80°C'],['التثبيت','DIN Rail'],['الضمان','5 سنوات']]},
+
+  {id:'pkg1', ct:'pkg', icon:'fa-house', nm:'نظام المنزل الصغير', cat:'باقة متكاملة', bdg:'موصى به', bc:'pcn', desc:'للشقق والمنازل الصغيرة. نظام اقتصادي يغطي الاحتياجات الأساسية نهاراً وليلاً.', pr:'4,500,000 د.ع', op:'', tags:['4 ألواح', '3kW', '5kWh', 'اقتصادي'], specs:[['الألواح','4 ألواح 550W Half-Cut'],['العاكس','عاكس هجين 3kW'],['البطاريات','LiFePO4 5kWh (6000 دورة)'],['الهيكل','ألومنيوم مقاوم'],['الحماية','ضد الصواعق'],['الكابلات','6mm مع MC4'],['التركيب','احترافي مع تقرير فحص'],['الضمان','سنتين شامل']]},
+  {id:'pkg2', ct:'pkg', icon:'fa-house-user', nm:'نظام المنزل المتوسط', cat:'باقة متكاملة', bdg:'الأكثر مبيعاً', bc:'pct', desc:'للمنازل المتوسطة 3-5 غرف. يغطي كافة الأجهزة المنزلية بفعالية عالية.', pr:'10,200,000 د.ع', op:'', tags:['8 ألواح', '8kW', '20kWh', 'WiFi'], specs:[['الألواح','8 ألواح 550W Canadian'],['العاكس','هجين 8kW مع WiFi'],['البطاريات','LiFePO4 20kWh'],['المراقبة','ذكي بالوقت الحقيقي'],['الكابلات','MC4 معتمد TUV'],['الحماية','شاملة ضد الصواعق'],['الصيانة','مجانية سنة كاملة'],['الضمان','سنتين شامل']]},
+  {id:'pkg3', ct:'pkg', icon:'fa-building', nm:'نظام الفيلا الكبيرة', cat:'باقة متكاملة', bdg:'فاخر', bc:'pcn', desc:'للفلل والمنازل الكبيرة 6+ غرف. استقلالية طاقوية كاملة وراحة بال مطلقة.', pr:'16,800,000 د.ع', op:'', tags:['14 لوح', '12kW', '30kWh', 'Bifacial'], specs:[['الألواح','14 لوح Bifacial Jinko'],['العاكس','هجين 12kW بلوتوث'],['البطاريات','LiFePO4 30kWh'],['المراقبة','تطبيق تنبيهات ذكي'],['العداد','تصدير ذكي للشبكة'],['الهيكل','مقاوم للرياح الشديدة'],['الصيانة','مجانية سنتين'],['الدعم','فني أولوي 24 ساعة']]},
+  {id:'pkg4', ct:'pkg', icon:'fa-industry', nm:'نظام تجاري ومصنعي', cat:'باقة متكاملة', bdg:'للمشاريع', bc:'pct', desc:'للمصانع والمشاريع التجارية. يُحدد حسب الطلب مع استشارة وتصميم مجاني.', pr:'يُحدد حسب الطلب', op:'', tags:['HJT', 'مخصص', '24 شهر', 'صيانة طويلة'], specs:[['التصميم','مخصص حسب الحمل الفعلي'],['الألواح','HJT بكفاءة 23.8%'],['التخزين','بسعة مخصصة'],['المراقبة','نظام متقدم'],['الصيانة','عقد طويل الأمد'],['الدفع','تقسيط بدون فوائد 24 شهر'],['الفريق','هندسي مخصص'],['العرض','استشارة مجانية']]},
+  {id:'pkg5', ct:'pkg', icon:'fa-tractor', nm:'نظام المزرعة المتكامل', cat:'باقة متكاملة', bdg:'للمزارع', bc:'pcn', desc:'للمزارع ومشاريع الري. مضخات مياه تعمل بالطاقة الشمسية بكفاءة عالية.', pr:'12,500,000 د.ع', op:'', tags:['12 لوح', '10kW', 'Off-Grid', 'مضخات'], specs:[['الألواح','12 لوح Mono قوي'],['العاكس','Off-Grid 10kW'],['المضخات','مياه شمسية غاطسة'],['الهيكل','ألمنيوم مقاوم للصدأ'],['الحماية','ضد الغبار والرطوبة'],['الكابلات','مدفنة تحت الأرض'],['التركيب','شامل المضخة والأسلاك'],['الضمان','سنتين شامل']]},
+  {id:'pkg6', ct:'pkg', icon:'fa-bolt', nm:'نظام الطوارئ والإنارة', cat:'باقة متكاملة', bdg:'سريع', bc:'pcs', desc:'للإنارة الخارجية وأنظمة الطوارئ. حلول سريعة التركيب وخفيفة الوزن.', pr:'2,200,000 د.ع', op:'', tags:['2 ألواح', '1kW', '200Ah', 'سريع'], specs:[['الألواح','2 ألواح مرنة Thin-Film'],['العاكس','صغير 1kW'],['البطاريات','Gel 200Ah'],['الاستخدام','إنارة وأجهزة صغيرة'],['التركيب','سريع خلال يوم واحد'],['الهيكل','لا يحتاج (لصق مباشر)'],['الحماية','أساسية'],['الضمان','سنتين شامل']]}
+];
+
+var currentModalItem = null;
+let cart = JSON.parse(localStorage.getItem('sunpower_cart')) || [];
+
+function saveCart() {
+    localStorage.setItem('sunpower_cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('cartCount').innerText = count;
+}
+
+function parsePrice(priceStr) {
+    return parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
+}
+
+function addToCart(id) {
+    const p = PD.find(x => x.id === id);
+    if(!p) return;
+    const existing = cart.find(item => item.id === id);
+    if(existing) {
+        existing.qty++;
+    } else {
+        cart.push({
+            id: p.id,
+            name: p.nm,
+            price: parsePrice(p.pr),
+            qty: 1
+        });
+    }
+    saveCart();
+    showToast('تمت إضافة ' + p.nm + ' إلى السلة بنجاح!');
+}
+
+function addToCartFromModal() {
+    if(currentModalItem) {
+        addToCart(currentModalItem.id);
+        closeModal();
+    }
+}
+
+function renderProducts() {
+  var panHtml = '', batHtml = '', invHtml = '', pkgHtml = '';
+  PD.forEach(function(p) {
+    var tagsHtml = '<div class="tags">';
+    p.tags.forEach(function(t) { tagsHtml += '<span>' + t + '</span>'; });
+    tagsHtml += '</div>';
+
+    var opHtml = p.op ? '<small>' + p.op + '</small>' : '';
+    
+    var pkgListHtml = '';
+    if(p.ct === 'pkg') {
+      pkgListHtml = '<ul class="pkg-list">';
+      p.specs.forEach(function(sp) { pkgListHtml += '<li><i class="fas fa-check-circle"></i> ' + sp[0] + ': ' + sp[1] + '</li>'; });
+      pkgListHtml += '</ul>';
+    }
+
+    var topIconHtml = p.ct === 'pkg' ? '<div class="pkg-top-icon"><i class="fas ' + p.icon + '"></i></div>' : '';
+    var imgHtml = p.ct !== 'pkg' ? '<div class="pci"><img src="' + p.img + '" alt="' + p.nm + '"><span class="pcbg ' + p.bc + '">' + p.bdg + '</span></div>' : '';
+    var badgeHtml = p.ct === 'pkg' ? '<span class="pkg-badge ' + p.bc + '">' + p.bdg + '</span>' : '';
+    var descHtml = p.ct === 'pkg' ? '' : '<p>' + p.desc.substring(0, 70) + '...</p>';
+    
+    var card = '<div class="prod-card" onclick="openProduct(\'' + p.id + '\')">' +
+      imgHtml +
+      '<div class="pcnf">' + topIconHtml + badgeHtml +
+        '<h3>' + p.nm + '</h3>' + descHtml + tagsHtml + pkgListHtml +
+        '<div class="pcf"><div class="pcp">' + p.pr + ' ' + opHtml + '</div>' +
+        '<button class="specs-btn" onclick="event.stopPropagation(); openProduct(\'' + p.id + '\')">المواصفات <i class="fas fa-arrow-left"></i></button></div></div></div>';
+    
+    if(p.ct === 'panel') panHtml += card;
+    else if(p.ct === 'bat') batHtml += card;
+    else if(p.ct === 'inv') invHtml += card;
+    else if(p.ct === 'pkg') pkgHtml += card;
+  });
+  document.getElementById('panG').innerHTML = panHtml;
+  document.getElementById('batG').innerHTML = batHtml;
+  document.getElementById('invG').innerHTML = invHtml;
+  document.getElementById('pkgG').innerHTML = pkgHtml;
+}
+
+function openProduct(id) {
+  var p = PD.find(x => x.id === id);
+  if(!p) return;
+  currentModalItem = p;
+  
+  var imgSrc = p.img ? p.img : 'https://via.placeholder.com/600x400?text=SunPower+Package';
+  document.getElementById('mImg').src = imgSrc;
+  document.getElementById('mName').textContent = p.nm;
+  document.getElementById('mCat').textContent = p.cat;
+  document.getElementById('mDesc').textContent = p.desc;
+  
+  var specsHtml = '';
+  p.specs.forEach(function(sp) {
+    specsHtml += '<div class="spec-item"><span class="spec-label">' + sp[0] + '</span><span class="spec-value">' + sp[1] + '</span></div>';
+  });
+  document.getElementById('mSpecs').innerHTML = specsHtml;
+  document.getElementById('mPrice').innerHTML = p.pr + (p.op ? ' <small>' + p.op + '</small>' : '');
+  
+  document.getElementById('prodModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if(e && e.target !== e.currentTarget) return;
+  document.getElementById('prodModal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.innerHTML = '<i class="fas fa-check-circle"></i> ' + msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 3000);
+}
+
+function validateDelivery(form) {
+  showToast('تم تأكيد طلب التوصيل! سنتواصل معك قريباً.');
+  form.reset();
+}
+
+// Scroll Reveal Animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Initialize
+renderProducts();
+updateCartCount();
+</script>
+</body>
+</html>

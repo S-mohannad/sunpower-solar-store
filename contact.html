@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SunPower — تواصل معنا</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<button id="scrollTopBtn" class="btt" title="العودة للأعلى"><i class="fas fa-chevron-up"></i></button>
+
+<nav class="navbar" id="nav">
+  <a href="SunPower.html" class="nav-brand"><i class="fas fa-solar-panel"></i><span>SunPower</span></a>
+  <button class="nav-tog" onclick="toggleNav()"><i class="fas fa-bars" id="navIco"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="nl"><a href="SunPower.html">الرئيسية</a></li>
+    <li class="nl"><a href="delivery.html">التوصيل</a></li>
+    <li class="nl"><a href="guarantees.html">الضمانات</a></li>
+    <li class="nl"><a href="how-to-order.html">كيف تطلب</a></li>
+    <li class="nl-offers"><a href="offers.html"><i class="fas fa-tags"></i> المنتجات</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner reveal">
+    <div class="page-hero-icon" style="background:rgba(2,132,199,.25);color:var(--sky-lt)"><i class="fas fa-paper-plane"></i></div>
+    <h1 style="background:linear-gradient(135deg,#38BDF8,#0284C7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">تواصل معنا</h1>
+    <p>فريقنا من المهندسين والمتخصصين جاهز للردّ على جميع استفساراتك وتقديم أفضل الحلول لك</p>
+  </div>
+</section>
+
+<section class="sec sec-d2">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- INFO -->
+      <div class="contact-info">
+        <div class="info-item reveal"><div class="ii-icon" style="background:rgba(234,179,8,.2);color:#FDE047"><i class="fas fa-phone"></i></div><div><div class="ii-label">اتصل بنا مباشرة</div><div class="ii-val" dir="ltr">+964 770 123 6787</div></div></div>
+        <div class="info-item reveal rd1"><div class="ii-icon" style="background:rgba(22,163,74,.2);color:#4ADE80"><i class="fab fa-whatsapp"></i></div><div><div class="ii-label">واتساب — أسرع وسيلة تواصل</div><div class="ii-val" dir="ltr">+964 770 987 6543</div></div></div>
+        <div class="info-item reveal rd2"><div class="ii-icon" style="background:rgba(29,78,216,.2);color:#60A5FA"><i class="fas fa-envelope"></i></div><div><div class="ii-label">البريد الإلكتروني</div><div class="ii-val">info@sunpower.iq</div></div></div>
+        <div class="info-item reveal rd3"><div class="ii-icon" style="background:rgba(2,132,199,.2);color:#38BDF8"><i class="fas fa-location-dot"></i></div><div><div class="ii-label">موقعنا</div><div class="ii-val">المنصور - شارع ١٤ رمضان - بناية الأمل - بغداد</div></div></div>
+        <div class="info-item reveal"><div class="ii-icon" style="background:rgba(124,58,237,.2);color:#C4B5FD"><i class="fas fa-clock"></i></div><div><div class="ii-label">ساعات العمل</div><div class="ii-val">السبت - الخميس: ٩ صباحاً حتى ١٠ مساءً</div></div></div>
+        <div class="info-item reveal rd1"><div class="ii-icon" style="background:rgba(234,88,12,.2);color:#FDBA74"><i class="fas fa-headset"></i></div><div><div class="ii-label">الدعم الفني</div><div class="ii-val">متاح ٢٤/٧ عبر الواتساب</div></div></div>
+
+        <div class="soc-links reveal rd2">
+          <a class="soc-btn" href="#" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+          <a class="soc-btn" href="#" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+          <a class="soc-btn" href="#" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+          <a class="soc-btn" href="#" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+          <a class="soc-btn" href="#" title="تليغرام"><i class="fab fa-telegram"></i></a>
+          <a class="soc-btn" href="#" title="تويتر/X"><i class="fab fa-x-twitter"></i></a>
+          <a class="soc-btn" href="#" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+        </div>
+
+        <div class="map-box reveal rd3">
+          <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&h=300&fit=crop" alt="الموقع">
+          <div class="map-overlay">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>المنصور - بغداد - العراق</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-box reveal rd1">
+        <h3><i class="fas fa-envelope-open-text"></i> أرسل لنا رسالة</h3>
+        <div class="form-2col">
+          <input class="fi" type="text" placeholder="الاسم الكامل" id="cName">
+          <input class="fi" type="tel" placeholder="رقم الهاتف" id="cPhone">
+        </div>
+        <input class="fi" type="email" placeholder="البريد الإلكتروني" id="cEmail">
+        <input class="fi" type="text" placeholder="المدينة / المحافظة" id="cCity">
+        <select class="fi" id="cSubject">
+          <option value="" disabled selected>موضوع الرسالة</option>
+          <option>استفسار عن منتج</option>
+          <option>طلب عرض سعر</option>
+          <option>طلب صيانة</option>
+          <option>طلب تركيب</option>
+          <option>استشارة تجارية</option>
+          <option>شكوى أو اقتراح</option>
+          <option>طلب شراكة</option>
+          <option>أخرى</option>
+        </select>
+        <textarea class="fi" placeholder="اكتب رسالتك بالتفصيل هنا..." id="cMsg" rows="5"></textarea>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-sky" style="flex:1;justify-content:center" onclick="submitContact()"><i class="fas fa-paper-plane"></i> إرسال الرسالة</button>
+          <a href="https://wa.me/9647709876543" class="btn btn-green" style="flex:1;justify-content:center;text-decoration:none"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>
+        </div>
+        <p id="formNote" style="font-size:.88rem;color:var(--green-lt);text-align:center;margin-top:10px;min-height:20px"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec sec-d1">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="sh-icon ic-gold"><i class="fas fa-users"></i></div>
+      <h2>فريقنا في خدمتك</h2>
+      <p>مهندسون ومتخصصون معتمدون جاهزون للمساعدة</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div class="card reveal" style="padding:28px;text-align:center">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="مهندس" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--gold)">
+        <h3 style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:4px">م. أحمد الكاظمي</h3>
+        <p style="font-size:.88rem;color:var(--gold);margin-bottom:10px">مدير المبيعات</p>
+        <p style="font-size:.9rem;color:var(--txt2);line-height:1.75">خبرة ١٠ سنوات في حلول الطاقة الشمسية والمتجددة</p>
+      </div>
+      <div class="card reveal rd1" style="padding:28px;text-align:center">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face" alt="مهندسة" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--green-lt)">
+        <h3 style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:4px">م. سارة العبيدي</h3>
+        <p style="font-size:.88rem;color:var(--green-lt);margin-bottom:10px">مهندسة تصميم أنظمة</p>
+        <p style="font-size:.9rem;color:var(--txt2);line-height:1.75">متخصصة في تصميم أنظمة الطاقة الشمسية للمشاريع الكبيرة</p>
+      </div>
+      <div class="card reveal rd2" style="padding:28px;text-align:center">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="فني" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--sky-lt)">
+        <h3 style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:4px">م. علي الزبيدي</h3>
+        <p style="font-size:.88rem;color:var(--sky-lt);margin-bottom:10px">رئيس الدعم الفني</p>
+        <p style="font-size:.9rem;color:var(--txt2);line-height:1.75">يقود فريق الدعم الفني ويضمن رضا العملاء الكامل</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="sp-footer">
+  <div class="container">
+    <div class="footer-grid" style="grid-template-columns:1fr; text-align:center;">
+      <div class="footer-brand">
+        <div class="footer-logo" style="justify-content:center;"><i class="fas fa-solar-panel"></i><span>SunPower</span></div>
+        <p style="max-width:500px; margin:0 auto 15px;">نحن هنا دائماً لمساعدتك. فريقنا جاهز للردّ على أي استفسار في أي وقت.</p>
+        <div class="footer-soc" style="justify-content:center;">
+          <a class="soc-a" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-tiktok"></i></a>
+          <a class="soc-a" href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ٢٠٢٤ SunPower Iraq — جميع الحقوق محفوظة</p>
+      <div class="fbl"><a href="#">سياسة الخصوصية</a><a href="#">الشروط والأحكام</a><a href="#">سياسة الاسترجاع</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollTopBtn.style.display = "flex";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+  scrollTopBtn.onclick = function() { window.scrollTo({top: 0, behavior: 'smooth'}); };
+
+  function toggleNav(){var nl=document.getElementById('navLinks');var ic=document.getElementById('navIco');nl.classList.toggle('open');ic.className=nl.classList.contains('open')?'fas fa-times':'fas fa-bars'}
+  
+  var ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+
+  function submitContact(){
+    var nm=document.getElementById('cName').value.trim();
+    var ph=document.getElementById('cPhone').value.trim();
+    var msg=document.getElementById('cMsg').value.trim();
+    if(!nm||!ph||!msg){alert('يرجى ملء الاسم والهاتف والرسالة');return}
+    document.getElementById('formNote').textContent='✅ تم إرسال رسالتك! سنتواصل معك خلال ساعة';
+    alert('تم إرسال رسالتك بنجاح!');
+    ['cName','cPhone','cEmail','cCity','cMsg'].forEach(function(id){document.getElementById(id).value=''});
+    document.getElementById('cSubject').selectedIndex=0;
+    setTimeout(function(){document.getElementById('formNote').textContent=''},4000);
+  }
+</script>
+
+</body>
+</html>
